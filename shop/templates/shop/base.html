@@ -1,0 +1,41 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block title %}Welcome to Altayland{% endblock %}</title>           
+        <link href="{% static 'css/base.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <div id="header">
+            <a href="/" class="logo">Altayland</a>
+        </div>
+        {% block subheader %}
+        <div id="subheader">
+            <div class="destination">
+                <a href="/mainland-china/">mainland china</a>
+            </div>
+            <div class="destination">
+                <a href="/south-korea/">south korea</a>
+            </div>
+            <div class="destination">
+                <a href="/serbia/">serbia</a>
+            </div>
+            <div class="destination">
+                <a href="/taiwan/">taiwan</a>
+            </div>
+            <div class="destination">
+                <a href="/laos/">laos</a>
+            </div>
+			<div id="cart">
+				<a href="{% url 'mycart:cart_detail' %}">my cart</a>
+			</div>
+        </div>
+        {% endblock subheader %}
+        <div id="content">
+            {% block content %}
+            {% endblock content %}
+        </div>
+        
+    </body>
+</html>

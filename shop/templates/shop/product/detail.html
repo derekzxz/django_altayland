@@ -1,0 +1,55 @@
+{% extends 'shop/base.html' %}
+
+{% block title %}{{ product.name }} - Altayland{% endblock %}
+
+{% block content %}
+    <div id="main">
+        <div id="main-pic">
+            <img src="{{ product.main_image.url }}">
+        </div>
+        <div id="middle-part">
+            <div id="product-name">{{ product.name }}</div>
+            <div id="product-period">{{ product.period }}</div>
+            <div id="product-price">rmb {{ product.price }}</div>
+            <form action="{% url 'mycart:cart_add' product.id %}" method="post">
+				<div id="selectbar">
+					{{ cart_product_form }}
+					{% csrf_token %}
+					<input type='submit' id="addToCart" value='添加到购物车'>
+				</div>
+            </form>
+        </div>
+        
+    </div>
+    <div id="text-detail">
+       <div class="info-box" id="description">
+           <h3>description</h3>
+           <p>{{ product.description|linebreaks }}</p>
+       </div>
+       <div class="info-box" id="itinerary">
+           <h3>itinerary</h3>
+           <p>{{ product.itinerary|linebreaks }}</p>
+       </div>
+       <div class="info-box" id="q_and_a">
+           <h3>q and a</h3>
+           <p>{{ product.q_and_a|linebreaks }}</p>
+       </div>    
+    </div>
+    
+    <div id="pic-detail">
+        {% for pic in product.images.all %}
+            <img src="{{ pic.image.url }}">
+        {% endfor %}
+    </div>
+    <div id="bottom">
+            <div id="about">
+                <h3>about</h3>
+                <p><span style="font-family:DaxCompact-Regular; ">altayland</span>专注于高品质旅游，目前开通台湾、南韩、老挝、中国大陆及塞尔维亚线路。</p>
+            </div>
+            <div id="contact">
+                <h3>contact</h3>
+                <p><span style="font-family:DaxCompact-Regular; ">e-mail: info@altayland.com</span></p>
+            </div>    
+    </div>
+
+{% endblock %}

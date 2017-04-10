@@ -1,0 +1,14 @@
+<div id="pagination">
+    <span class="step-links">
+        {% if products.has_previous %}
+            <a href="?page={{ products.previous_page_number }}">pevious</a>
+        {% endif %}
+        <span class="current" style="color: black;">
+            page{{ products.number }} of {{ products.paginator.num_pages }}
+        </span>
+        {% if products.has_next %}
+            <a href="?page={{ products.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+

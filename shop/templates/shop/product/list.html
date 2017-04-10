@@ -1,0 +1,36 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block title %}
+    {% if category %}{{ category.name }} - Altayland{% else %}Altayland{% endif %}
+{% endblock %}
+
+{% block content %}
+    <div id="grid">
+        {% for p in products %}
+            <div class="item">
+                <a href="{{ p.get_absolute_url }}">
+                    <img src="{{ p.main_image.url }}">
+                </a><br />
+                <a href="{{ p.get_absolute_url }}">
+                    {{ p.name }}
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+    <div id="pagination1">
+    {% include 'shop/product/pagination.html' %}
+    </div>
+    <div id="bottom">
+            <div id="about">
+                <h3>about</h3>
+                <p><span style="font-family:DaxCompact-Regular; ">altayland</span>专注于高品质旅游，目前开通台湾、南韩、老挝、中国大陆及塞尔维亚线路。</p>
+            </div>
+            <div id="contact">
+                <h3>contact</h3>
+                <p><span style="font-family:DaxCompact-Regular; ">e-mail: info@altayland.com</span></p>
+            </div>    
+    </div>       
+           
+{% endblock %}
+

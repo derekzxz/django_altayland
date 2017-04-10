@@ -1,0 +1,299 @@
+a {
+    text-decoration: none;
+    color: rgb(143, 122, 16);
+}
+
+/**{
+    border: solid 1px red;
+}*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: DaxCompact-Regular, Ubuntu, consolas, sans-serif;
+    color: rgb(143, 122, 16);
+}
+
+#header {
+    padding: 10px 100px;
+    font-size: 18px;
+    overflow: auto;
+}
+
+#header .logo{
+    font-family: Ubuntu, sans-serif;
+    font-size: 30px;
+    float: left;
+    color: rgb(143, 122, 16);
+    margin-right: 10%;
+}
+/* subheader */
+#subheader {
+    background: rgb(143, 122, 16);
+    padding: 15px 100px;
+    overflow: auto;
+}
+
+#subheader .destination {
+    float: left;
+    padding-right: 50px;
+}
+
+#subheader .destination a {
+    font-size: 1.2em;
+    color: #ffffff;
+    padding-top: 4px;
+}
+
+#subheader #cart {
+	margin-right: 0;
+	padding-right: 100px;
+	float: right;
+}
+
+#subheader #cart a {
+	font-size: 1.2em;
+	color: #ffffff;
+	padding-top: 4px;
+}
+
+#grid, #cart-detail-page {
+	padding: 15px 100px;
+	margin-right: 0px;
+}
+
+
+
+#grid .item {
+    float: left;
+    text-align: center;
+    line-height: 1.2;
+    padding-right: 50px;
+    padding-top: 20px;
+}
+
+#grid .item a {
+    font-family: "冬青黑体简体中文 W3";
+    font-weight: 580;
+}
+
+#grid .item a img{
+    width: 380px;
+    height: 300px;
+    margin-bottom: 8px;
+    border-bottom: solid 10px rgb(143, 122, 16);
+}
+
+#main {
+    padding: 30px 100px;
+    height: 350px;
+}
+
+#main #main-pic {
+    float: left;
+    padding-right: 30px;
+}
+
+#main #main-pic img {
+    width: 500px;
+    margin-bottom: 3px;
+    border-bottom: solid 10px rgb(143, 122, 16);
+}
+
+#main #middle-part {
+    float: left;
+    width: 300px;
+    height: 350px;
+}
+
+#main #middle-part #product-name, h1 {
+    font-family: 明兰_Mono, Ubuntu, sans-serif;
+    font-size: 2.5em;
+    padding-top: 20px;
+    font-weight: bold;
+}
+
+#main #middle-part #product-period {
+    font-family: Ubuntu, sans-serif;
+    font-size: 1.5em;
+    padding-top: 20px;
+}
+
+#main #middle-part #product-price {
+    font-family: Ubuntu, sans-serif;
+    font-size: 1.5em;
+    padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#text-detail {
+    padding: 0px 100px;
+}
+
+#text-detail .info-box {
+    width: 400px;
+    height: 200px;
+    float: left;
+    border-top: solid 10px rgb(143, 122, 16);
+    background: #ececec;
+    overflow: auto;
+}
+
+#text-detail #itinerary {
+    margin-left: 30px;
+}
+
+#text-detail #q_and_a {
+    margin-left: 30px;
+}
+
+
+#text-detail .info-box h3 {
+    margin: 4px 14px 14px 14px;
+    color: black;
+    font-family: DaxCompact-Regular, Ubuntu, consolas, sans-serif;    
+}
+
+
+#text-detail .info-box p {
+    margin: 4px 14px 14px 14px;
+    font-size: 0.9em;
+    font-family: "冬青黑体简体中文 W3" ;
+}
+
+#pic-detail img {
+    margin-left: 100px;
+    margin-top: 30px;
+    border-bottom: solid 10px rgb(143, 122, 16);
+    width: 1260px;
+    height: 710px;
+}
+
+#bottom {
+    margin-top: 30px;
+    width: 100%;
+    height: 300px;
+    background: #ececec;
+    border-top: solid 10px rgb(143, 122, 16);
+    float: left;
+}
+
+#bottom #about, #bottom #contact {
+    padding-left: 300px;
+    padding-bottom: 20px;
+    font-family: 明兰_Mono, "冬青黑体简体中文 W3" ;
+}
+
+#bottom #about h3{
+    color: black;
+    font-family: DaxCompact-Regular, Ubuntu, consolas, sans-serif;
+}
+
+#bottom #contact h3{
+    color: black;
+    font-family: DaxCompact-Regular, Ubuntu, consolas, sans-serif;
+}
+
+#pagination1 {
+    margin-top: 20px;
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+
+/*table*/
+
+table {
+	width: 100%;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+	table th, table td {
+		text-align: left;
+		font-size: 14px;
+		padding: 10px;
+		margin: 0;
+	}
+
+tbody tr:nth-child(odd) {
+	background: #efefef;
+}
+
+tbody tr.subtotal {
+	background: #ccc;
+}
+
+thead th, tbody tr.total {
+	background: #5993bb;
+	color: #fff;
+	font-weight: bold;
+}
+
+table.cart {
+	margin-bottom: 40px;
+}
+
+table.cart img {
+		width: 180px;
+}
+
+tbody td.num {
+	text-align: right;
+}
+
+td input[type="submit"] {
+	font-size: 12px;
+	padding: 4px 10px;
+}
+
+#cart-detail-page h1 {
+	font-family: DaxCompact-Regular, sans-serif;
+}
+
+
+
+table tbody tr td #id_quantity {
+	background: transparent;
+	width: 35px;
+	padding: 5px;
+	border: 1.5px solid rgb(143, 122, 16);
+	height: 24px;
+	-webkit-appearance: none; /* for chrome */
+}
+
+form div #id_quantity {
+	display:none;
+}
+
+label {
+	float: left;
+	clear: both;
+	color: #333;
+	margin-bottom: 4px;
+	display: none;
+	font-size: 14px;
+	padding-bottom: 4px;
+}
+
+input, textarea {
+	clear: both;
+	margin: 0 0 10px;
+	background: #efefef;
+	border: 0;
+	padding: 6px 10px;
+	font-size: 14px;
+}
+
+input[type=submit], .button{
+	font-weight: bold;
+	background: rgb(143, 122, 16);
+	color: #fff;
+	padding: 10px 20px;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+.text-right {
+	text-align: right;
+}

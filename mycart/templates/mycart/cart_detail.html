@@ -1,0 +1,54 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block title %}
+Your shopping cart - Altayland
+{% endblock %}
+
+{% block content %}
+<div id="cart-detail-page">
+	<h1>Your shopping cart</h1>
+	<table class="cart">
+		<thead>
+			<tr>
+				<th>destination</th>
+				<th>period</th>
+				<th>quantity</th>
+				<th>remove</th>
+				<th style="text-align:right;">unit price</th>
+				<th style="text-align:right;">price</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for item in cart %}
+			{% with product=item.product %}
+			<tr>
+				<td>{{ product.name }}</td>
+				<td>{{ product.period }}</td>
+				<td>
+					<form action="{% url 'mycart:cart_add' product.id %}" method="post">
+						{{ item.update_quantity_form.quantity }}
+						{{ item.update_quantity_form.update }}
+						<input type="submit" value="更新">
+						{% csrf_token %}
+					</form>
+				</td>
+				<td><a href="{% url 'mycart:cart_remove' product.id %}">删除</a></td>
+				<td class='num'>￥{{ item.price }}</td>
+				<td class='num'>￥{{ item.total_price }}</td>
+			</tr>
+			{% endwith %}
+			{% endfor %}
+			<tr class="total">
+				<td>Total</td>
+				<td colspan='4'></td>
+				<td class="num">￥{{ cart.get_total_price }}</td>
+			</tr>
+		</tbody>
+	</table>
+	<p class="text-right">
+		<a href="{% url 'shop:product_list' %}" class="button light">继续购物</a>
+		<a href="#" class="button">结算</a>
+	</p>
+</div>
+{% endblock content %}
